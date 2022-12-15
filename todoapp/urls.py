@@ -12,4 +12,5 @@ urlpatterns = [
     path("logout/", views.log_out, name="logout"),
     path("login/", views.log_in, name="login"),
     path("signup/", views.signup, name="signup"),
+    path("api/", include("todoapp.api.urls")),
 ]
