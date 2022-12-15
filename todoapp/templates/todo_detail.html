@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container m-5 p-5 pt-0">
+    <div class="row">
+        <div class="col-8">
+            <h2 class="pb-4">Todo Detail</h2>    
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="btn btn-success" href="{% url 'todoapp:todo_list' %}" role="button"><i class="fa fa-list-ol" aria-hidden="true"></i> Todo List</a>
+            <div class="p-3">
+                {% comment %} <a class="btn btn-warning" href="{% url 'todoapp:update_user' object.id %}" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Update User</a> {% endcomment %}
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row align-items-start mt-3">
+            <div class="col-4">
+                <b>Title</b>
+            </div>
+            <div class="col">
+                {{object.title}}
+            </div>
+        </div>
+        <div class="row align-items-start mt-3">
+            <div class="col-4">
+                <b>Category</b>
+            </div>
+            <div class="col">
+                {{object.category}}
+            </div>
+        </div>
+        <div class="row align-items-start mt-3">
+            <div class="col-4">
+                <b>Description</b>
+            </div>
+            <div class="col">
+                {{object.description}}
+            </div>
+        </div>
+        <div class="row align-items-start mt-3">
+            <div class="col-4">
+                <b>Due Date</b>
+            </div>
+            <div class="col">
+                {{object.due_date}}
+            </div>
+        </div>
+        <div class="row align-items-start mt-3">
+            <div class="col-4">
+                <b>Created At</b>
+            </div>
+            <div class="col">
+                {{object.created_at}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

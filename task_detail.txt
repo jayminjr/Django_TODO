@@ -1,0 +1,6 @@
+TODO Practical TEST  
+
+ Create a todo list application and also create API(create token-based authentication for API) for the to-do list.
+- Field of todo application is the title, description, category, due date.
+- Features of the todo application are signup(using email and password), login, create a record, delete record, update record, and search record by title, category, and due date.
+- There should be email address verification mail

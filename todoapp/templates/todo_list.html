@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container m-5 p-5 pt-0">
+    <div class="row">
+        <div class="col-8">
+            <h2>Todo List</h2>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="btn btn-primary" href="{% url 'todoapp:create_todo' %}" role="button"><i class="fa fa-plus" aria-hidden="true"></i> New</a>
+        </div>
+    </div>
+    <table class="table table-bordered table-dark mt-4">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for todo in todo_list %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{todo.title}}</td>
+                <td>{{todo.category}}</td>
+                <td>
+                    <a class="btn btn-info" href='{% url "todoapp:todo_detail" todo.id %}'> <i class="fa fa-eye" aria-hidden="true"></i> View </a>
+                    <a class="btn btn-warning" href="{% url 'todoapp:update_todo' todo.id %}" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Update</a>
+                    <a class="btn btn-danger" href='{% url "todoapp:delete_todo" todo.id %}'> <i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
